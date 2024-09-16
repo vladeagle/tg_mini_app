@@ -1,0 +1,22 @@
+.card-detail {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.card-detail__item {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-detail__item {
+    margin: 30px 12px;
+  }
+}

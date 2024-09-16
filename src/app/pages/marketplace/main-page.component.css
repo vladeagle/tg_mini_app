@@ -1,0 +1,32 @@
+.main-page {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.main-page__random-images {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 380px;
+
+}
+
+.main-page__images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 204px;
+}
+
+.main-page__apod {
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-page__apod {
+    max-width: 100%;
+  }
+}

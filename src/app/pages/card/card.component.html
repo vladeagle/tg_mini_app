@@ -1,0 +1,12 @@
+<div class="card" [routerLink]="'/card-detail/' + image().id">
+  <p class="card__date">created at: {{ image().created_at | date: 'shortDate' }}</p>
+
+  <img
+    class="card__image"
+    alt="{{ image().alt_description }}"
+    [src]="image().urls.small_s3">
+
+  <h5 class="card__text">
+    {{ image().alt_description ? image().alt_description : 'No description for this one' }}
+  </h5>
+</div>

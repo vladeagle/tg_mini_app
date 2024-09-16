@@ -1,0 +1,40 @@
+<div class="main-page">
+  <div class="main-page__random-images">
+    @if (randomImages().length) {
+
+    <h2>Some random images from web:</h2>
+
+    <div class="main-page__images">
+      @for (image of randomImages(); track image.id) {
+      <app-card [image]="image"></app-card>
+      }
+    </div>
+
+    <small
+      >Click any card for full image info! <br />or click the button below to load
+      more:</small
+    >
+
+    <button mat-raised-button (click)="getRandom()">Load more images!</button>
+
+    } @else if (randomImagesErr()) {
+      <small>Looks like we've exceeded the limit!</small><br>
+      <h2>{{ randomImagesErr() }}</h2>
+    } @else {
+      <mat-progress-bar class="main-page__loader" mode="buffer" />
+    }
+  </div>
+
+  <h2>Here you can load and view Astronomy Picture of the Day:</h2>
+  @if (apod()) {
+    <img class="main-page__apod" alt="APOD" [src]="apod().url" />
+
+  } @else if (apodIsLoading()) {
+    <mat-progress-bar class="main-page__loader" mode="buffer" />
+
+  } @else {
+    <button mat-raised-button (click)="getAPOD()">
+      Get Astronomy Picture of the Day!
+    </button>
+  }
+</div>

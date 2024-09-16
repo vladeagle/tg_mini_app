@@ -1,0 +1,38 @@
+<div class="card-detail">
+  @if (randomImagesErr() && !imageById().id) {
+  <h2>Looks like an error ocured!</h2>
+  <p>{{ randomImagesErr() }}</p>
+
+  } @else {
+  <mat-tab-group>
+    <mat-tab label="Info" mat-stretch-tabs="false">
+      <div class="card-detail__item">
+        <h2>Full description of an image:</h2>
+        <h4>{{ imageById()?.alt_description }}</h4>
+      </div>
+
+      <div class="card-detail__item">
+        <h2>ID</h2>
+        <h4>{{ imageById()?.id }}</h4>
+      </div>
+
+      <div class="card-detail__item">
+        <h2>created_at</h2>
+        <h4>{{ imageById()?.created_at }}</h4>
+      </div>
+
+      <div class="card-detail__item">
+        <h2>total downloads</h2>
+        <h4>{{ imageById()?.downloads }}</h4>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Full Image">
+      <img
+        class="card__image"
+        alt="{{ imageById()?.alt_description }}"
+        [src]="imageById()?.urls.full">
+    </mat-tab>
+  </mat-tab-group>
+  }
+</div>

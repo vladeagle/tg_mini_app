@@ -1,0 +1,13 @@
+<div class="feedback">
+  <h2>You can send us some message! Go ahead:</h2>
+  <mat-form-field>
+    <mat-label>Your feedback</mat-label>
+    <textarea
+      class="feedback__textarea"
+      matInput
+      title="textarea"
+      [value]="message()"
+      (input)="handleInputChange($event)"
+    ></textarea>
+  </mat-form-field>
+</div>
